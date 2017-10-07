@@ -4,13 +4,19 @@
         function clickFunction()
         {
             var name = "Volvo";
-            document.getElementById("testp").innerHTML = name;
+            carname = name;     //Golbal variable
         };
+        clickFunction();
+        //document.getElementById("testp").innerHTML = carname;
+        function otherClick()
+        {
+            document.getElementById("testp").innerHTML = carname;
+        }
     </script>
 </head>
 <body>
     <br />
-    <button class="btn btn-default" onclick="clickFunction()">test button</button>
+    <button class="btn btn-default" onclick="otherClick()">test button</button>
     <span id="testp" >123</span>
 </body>
 </html>
