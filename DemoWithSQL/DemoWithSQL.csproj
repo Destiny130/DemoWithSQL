@@ -234,6 +234,7 @@
     <Content Include="Views\SetAuth\SetAuth.cshtml" />
     <Content Include="Views\JavaScript\JS_RangeOfAVariable.cshtml" />
     <Content Include="Views\JavaScript\Index.cshtml" />
+    <Content Include="Views\JavaScript\JS_DynamicArray.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

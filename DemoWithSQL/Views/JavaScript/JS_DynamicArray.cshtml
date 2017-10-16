@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+    <script>
+        var aArray = new Array();
+        var i = 0;
+        function arrayaddclick()
+        {
+            i++;
+            aArray.push(i * 11);
+            document.getElementById("showspan").innerText = aArray.length;
+        }
+    </script>
+</head>
+<body>
+    <h4>This demo shows created a array in js, then every time we click the button, array will add a new element by use 'push()' method and show the array's count.</h4>
+    <br />
+    <input type="button" id="testbutton" value="test button" class="btn btn-default" onclick="arrayaddclick()" /><br />
+    <p>Array created in JS's count: <span id="showspan"></span></p>
+</body>
+</html>

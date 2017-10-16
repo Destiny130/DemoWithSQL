@@ -13,8 +13,12 @@ namespace DemoWithSQL.Controllers
             return View();
         }
 
-        // GET: JavaScript
         public ActionResult JS_RangeOfAVariable()
+        {
+            return View();
+        }
+
+        public ActionResult JS_DynamicArray()
         {
             return View();
         }
