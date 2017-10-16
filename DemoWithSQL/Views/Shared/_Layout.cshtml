@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Site.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-1.10.2.js"></script>
 </head>
 <body>
@@ -22,8 +23,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("SetAuth","SetAuth","SetAuth")</li>
-                    <li>@Html.ActionLink("JStest","JStest","JavaScript")</li>
+                    <li>@Html.ActionLink("JSdemos","Index","JavaScript")</li>
                 </ul>
             </div>
         </div>
