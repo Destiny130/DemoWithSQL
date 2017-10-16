@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CSSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JavaScriptController.cs" />
     <Compile Include="Controllers\SetAuthController.cs" />
@@ -235,6 +236,8 @@
     <Content Include="Views\JavaScript\JS_RangeOfAVariable.cshtml" />
     <Content Include="Views\JavaScript\Index.cshtml" />
     <Content Include="Views\JavaScript\JS_DynamicArray.cshtml" />
+    <Content Include="Views\CSS\Index.cshtml" />
+    <Content Include="Views\CSS\Fixed.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
