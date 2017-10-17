@@ -152,7 +152,7 @@
     <Compile Include="Controllers\CSSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JavaScriptController.cs" />
-    <Compile Include="Controllers\SetAuthController.cs" />
+    <Compile Include="Controllers\MVCController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,6 +183,7 @@
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery-ui.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -213,6 +214,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -232,13 +234,17 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\SetAuth\SetAuth.cshtml" />
+    <Content Include="Views\MVC\MVC_SetAuth.cshtml" />
     <Content Include="Views\JavaScript\JS_RangeOfAVariable.cshtml" />
     <Content Include="Views\JavaScript\Index.cshtml" />
     <Content Include="Views\JavaScript\JS_DynamicArray.cshtml" />
     <Content Include="Views\CSS\Index.cshtml" />
     <Content Include="Views\CSS\Fixed.cshtml" />
     <Content Include="Views\JavaScript\JS_DefineOwnObject.cshtml" />
+    <Content Include="Views\JavaScript\JS_Validation.cshtml" />
+    <Content Include="Views\JavaScript\JS_Confirm.cshtml" />
+    <Content Include="Views\MVC\Index.cshtml" />
+    <Content Include="Views\MVC\MVC_AutoComplete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

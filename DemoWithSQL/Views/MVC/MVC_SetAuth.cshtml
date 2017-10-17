@@ -1,0 +1,87 @@
+﻿@model Dictionary<string, List<SelectListItem>>
+
+<html>
+<head>
+    <script>
+        $(document).ready(function ()
+        {
+            var list = @Html.Raw(Json.Encode(Model.Keys));
+            $.each(list, function (i, item)
+            {
+                var far = $("#" + item);
+                far.click(function ()
+                {
+                    $(this).siblings("div").find("input").attr("checked", true);
+                    $(this).siblings("div").find("input").prop("checked", this.checked);
+                });
+
+                function checklength(){
+                    var chilen = far.siblings("div").find("input").length / 2;
+                    var checkedlen = far.siblings("div").find("input:checked").length;
+                    if (chilen == checkedlen)
+                    {
+                        far.prop("indeterminate", false);
+                        far.prop("checked", true);
+                    }
+                    else if (checkedlen == 0)
+                    {
+                        far.prop("indeterminate", false);
+                        far.prop("checked", false);
+                    }
+                    else
+                    {
+                        far.prop("indeterminate", true);
+                    }
+                }
+
+                checklength();
+
+                $("input").click(function ()
+                {
+                    checklength();
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <h4>This page shows how to use JS control checkbox's style automatically, and how to use model to get/set data with SQL.</h4>
+    @using (Html.BeginForm("Submit", "MVC"))
+    {
+        <form>
+            <table class="table">
+                <tr>
+                    <td>
+                        @TempData["Sucess"]
+                        @TempData["Failed"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul style="list-style:none;">
+                            @foreach (var item in Model)
+                            {
+                                <li>
+                                    <input type="checkbox" id=@item.Key /><label class=@item.Key style="font-weight:normal;padding-left:4px;">@item.Key</label>
+                                    <div style="margin-left:35px;">
+                                        @foreach (var sub in item.Value)
+                                        {
+                                            @Html.CheckBox(@sub.Value, @sub.Selected)<label for=@sub.Value style="font-weight:normal;padding-left:4px;">@sub.Text</label>
+                                        }
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" id="Submit" class="btn btn-default">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    }
+</body>
+</html>
+

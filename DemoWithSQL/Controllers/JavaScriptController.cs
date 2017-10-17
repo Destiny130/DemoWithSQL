@@ -27,5 +27,27 @@ namespace DemoWithSQL.Controllers
         {
             return View();
         }
+
+        public ActionResult JS_Validation()
+        {
+            return View();
+        }
+
+        public ActionResult JS_ValidateEmail(string email)
+        {
+            int apos = email.IndexOf("@");
+            int dotpos = email.IndexOf(".");
+            string message = "Not a valid E-mail.";
+            if (apos > 0 && (dotpos - apos) > 1 && dotpos != (email.Length - 1))
+            {
+                message = "This is a valid E-mail.";
+            }
+            return Content(message);
+        }
+
+        public ActionResult JS_Confirm()
+        {
+            return View();
+        }
     }
 }

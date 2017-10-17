@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <script>
+        function showdata()
+        {
+            var r = confirm("Do you want show the input value?");
+            if (r == true)
+            {
+                document.getElementById("showarea").innerText = document.getElementById("testinput").value;
+            }
+            else
+            {
+                document.getElementById("showarea").innerText = "You cancel the show function.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h4>This page shows 'confirm' function in JS, which can let users confirm their action.</h4>
+    <br />
+    <table class="table">
+        <tr>
+            <td><input id="testinput" /></td>
+            <td><input type="button" id="show" value="show input value" class="btn btn-default" onclick="showdata()" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" id="showarea"></td>
+        </tr>
+    </table>
+</body>
+</html>
