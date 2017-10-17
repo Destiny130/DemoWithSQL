@@ -8,6 +8,7 @@
             i++;
             aArray.push(i * 11);
             document.getElementById("showspan").innerText = aArray.length;
+            document.getElementById("member").innerText = aArray;
         }
     </script>
 </head>
@@ -16,5 +17,6 @@
     <br />
     <input type="button" id="testbutton" value="test button" class="btn btn-default" onclick="arrayaddclick()" /><br />
     <p>Array created in JS's count: <span id="showspan"></span></p>
+    <p width="800" style="word-break:keep-all;">Array's member:<span id="member" ></span></p>  @*Style will handle later.*@
 </body>
 </html>

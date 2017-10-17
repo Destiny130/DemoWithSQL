@@ -23,6 +23,11 @@ textarea {
     max-width: 280px;
 }
 
-.ulnone{
-    list-style:none;
+.ulnone {
+    list-style: none;
 }
+
+.notdone {
+    border: 1px dashed rgba(255, 0, 0, 0.50) ;
+}
+

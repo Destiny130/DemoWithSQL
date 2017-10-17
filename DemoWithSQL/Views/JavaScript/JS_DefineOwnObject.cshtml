@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+    <script>
+        var person = new Object();
+        person.age = 22;
+        person.firstname = "Sis";
+        person.lastname = "Law";
+        person.addmore = "Can add many porperties";
+
+        function addproperty()
+        {
+            var propertyname = document.getElementById("propertyname").value;
+            var propertyvalue = document.getElementById("propertyvalue").value;
+            person.propertyname = propertyvalue;
+            showdata();
+        }
+
+        function showdata()
+        {
+            var temp = "";
+            for (x in person) {
+                temp += '<li>' + person[x] + '</li>';
+            }
+            document.getElementById("propertiesSpan").innerHTML = temp;
+        }
+    </script>
+</head>
+<body>
+    <h4>Define our own object, which we can add as much properties as we want.</h4><br />
+    <div>
+        <table class="table" style="width:900px;">
+            <tr>
+                <td>Input property name:</td>
+                <td><input id="propertyname" /></td>
+                <td>Input property value:</td>
+                <td><input id="propertyvalue" /></td>
+                <td><input type="button" value="submit data" class="btn btn-default" onclick="addproperty()" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="showproperties" class="btn btn-default" value="show properties" onclick="showdata()" /></td>
+                <td colspan="4"><ul id="propertiesSpan" class="ulnone"></ul></td>
+            </tr>
+        </table>
+    </div>
+    <p>Not done, handle it later.<br />
+    When I click submit data, it should add a new property to 'person' which was done, but it couldn't add another property later.</p>
+</body>
+</html>
