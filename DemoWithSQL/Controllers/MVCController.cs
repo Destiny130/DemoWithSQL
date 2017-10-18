@@ -69,5 +69,49 @@ namespace DemoWithSQL.Controllers
             ViewBag.strs = strs;
             return View();
         }
+
+        public ActionResult MVC_TransManyParam()
+        {
+            return View();
+        }
+
+        public ActionResult GetParams(string str/*, int id, string[] strs, int[] ids, Fruit fruit, Fruit[] fruits*/)
+        {
+            string ret = "show: ";
+            try
+            {
+                ret += str + ",&nbsp;";
+                //ret += id.ToString() + "<br />";
+                //foreach (string s in strs)
+                //{
+                //    ret += s + ",&nbsp;";
+                //}
+                //ret += "<br />";
+                //foreach (int i in ids)
+                //{
+                //    ret += i.ToString() + ",&nbsp;";
+                //}
+                //ret += "<br />";
+                //ret += fruit.Name + "<br />";
+                //foreach (Fruit f in fruits)
+                //{
+                //    ret += fruit.Name + ",&nbsp;";
+                //}
+                //ret += "<br />";
+            }
+            catch (Exception ex)
+            {
+                ret += ex.Message;
+            }
+            return Content(ret);
+        }
+    }
+
+    public class Fruit
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public bool IsOnSale { get; set; }
     }
 }

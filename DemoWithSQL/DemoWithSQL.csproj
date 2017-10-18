@@ -245,6 +245,7 @@
     <Content Include="Views\JavaScript\JS_Confirm.cshtml" />
     <Content Include="Views\MVC\Index.cshtml" />
     <Content Include="Views\MVC\MVC_AutoComplete.cshtml" />
+    <Content Include="Views\MVC\MVC_TransManyParam.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+    <script>
+        function showdata()
+        {
+            var str = "this is a test string";
+            //var id = 130;
+            //var strs = new Array("aa", "bb", "cc");
+            //var ids = new Array(66, 55, 44);
+            //var fruit = new Object();
+            //fruit.ID = 1; fruit.Name = "Banana"; fruit.Description = "a type of fruit.";
+            //var fruits = new Object();
+            //fruits.ID = new Array(2, 3);
+            //fruits.Name = new Array("Apple", "Orange");
+            //fruits.Description = new Array("Pretty", "Sweet");
+            //fruits[0].ID = 2; fruits[1].Name = "Apple"; fruits[2].Description = "Pretty";
+            //fruits[1].ID = 3; fruits[1].Name = "Orange"; fruits[1].Description = "Sweet";
+            //var obj = { str: str, strs: strs, id: id, ids: ids, fruit: fruit/*, fruits: fruits*/ }
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                //code for IE7+, FireFox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                //code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            //xmlhttp.setRequestHeader("Content-Type", "application/json, text/javascript");
+            xmlhttp.onreadystatechange = function ()
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    //window.onload = function ()
+                    //{
+                        document.getElementById("showarea").innerHTML = xmlhttp.reponseText;
+                    //};
+                }
+                else {
+                    document.getElementById("showarea").innerHTML = "ERROR" + xmlhttp.status + "<br />" + xmlhttp.readyState;
+                }
+            }
+            xmlhttp.open("POST", "/MVC/GetParams", true);
+            xmlhttp.setRequestHeader("Content-Type", "text/xml");
+            //xmlhttp.requestType = "json";
+            xmlhttp.send(str);
+        }
+    </script>
+</head>
+<body>
+    <br />
+    <h4>This page shows how to post many different type to controller with ajax.</h4>
+    <br />
+    <div>
+        <p>Data I post are following content:</p>
+        <dl>
+            <dt>str</dt>
+            <dd>this is a test string</dd>
+            <dt>strs</dt>
+            <dd>aa,bb,cc</dd>
+            <dt>id</dt>
+            <dd>130</dd>
+            <dt>ids</dt>
+            <dd>66,55,44</dd>
+            <dt>fruit</dt>
+            <dd>ID = 1, Name = Banana, Description = a type of fruit.</dd>
+            <dt>fruits</dt>
+            <dd>
+                ID = 2, Name = Apple, Description = Pretty.<br />
+                ID = 3, Name = Orange, Description = Sweet.
+            </dd>
+        </dl>
+        <p>Click this button to show data: <input type="button" id="showdata" value="show data" onclick="showdata()" class="btn btn-default" /></p>
+        <p id="showarea">0</p>
+    </div>
+</body>
+</html>
