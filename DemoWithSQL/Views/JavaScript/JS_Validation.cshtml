@@ -14,21 +14,52 @@
                     document.getElementById("validEmail").innerText = msg;
                 }
             });
-        }
+        };
+
+        function validateEmail_JS()
+        {
+            var email = document.getElementById("Email_JS").value;
+            var apos = email.indexOf("@@");
+            var dotpos = email.indexOf(".");
+            if (apos > 0 && (dotpos - apos) > 1 && dotpos != (email.length - 1)) {
+                document.getElementById("validEmail_JS").innerText = "This is a valid E-mail";
+            }
+            else {
+                document.getElementById("validEmail_JS").innerText = "Not a valid E-mail";
+            }
+        };
     </script>
 </head>
 <body>
     <h4>This page shows JS validation.</h4>
     <br />
-    <table class="table">
-        <tr>
-            <td>Input an E-mail address:</td>
-            <td><input id="Email" /></td>
-        </tr>
-        <tr>
-            <td><input type="button" id="validateEmail" value="validate E-mail" class="btn btn-default" onclick="validateEmail()" /></td>
-            <td><span id="validEmail"></span></td>
-        </tr>
-    </table>
+    <dl>
+        <dt>First is an ajax validation:</dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <td>Input an E-mail address:</td>
+                    <td><input id="Email" style="width:300px;" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="validateEmail" value="validate E-mail" class="btn btn-default" onclick="validateEmail()" /></td>
+                    <td><span id="validEmail"></span></td>
+                </tr>
+            </table>
+        </dd>
+        <dt>This is a JS validation:</dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <td>Input an E-mail address:</td>
+                    <td><input id="Email_JS" style="width:300px;" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="validateEmail_JS" value="validate E-mail" class="btn btn-default" onclick="validateEmail_JS()" /></td>
+                    <td><span id="validEmail_JS"></span></td>
+                </tr>
+            </table>
+        </dd>
+    </dl>
 </body>
 </html>

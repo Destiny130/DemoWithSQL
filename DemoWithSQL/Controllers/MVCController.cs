@@ -65,7 +65,7 @@ namespace DemoWithSQL.Controllers
 
         public ActionResult MVC_AutoComplete()
         {
-            List<string> strs = new List<string> { "ASP", "ASP.NET", "ASP.NET MVC", "JAVA", "PYTHON", "C", "C#", "C++", "JAVASCRIPT", "SPRING MVC", "RUBY", "BILL", "LAW", "DELL", "SONY" };
+            string[] strs = new string[] { "ASP", "ASP.NET", "ASP.NET MVC", "JAVA", "PYTHON", "C", "C#", "C++", "JAVASCRIPT", "SPRING MVC", "RUBY", "BILL", "LAW", "DELL", "SONY" };
             ViewBag.strs = strs;
             return View();
         }

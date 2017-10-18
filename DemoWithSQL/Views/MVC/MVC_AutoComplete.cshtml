@@ -51,7 +51,7 @@
 
             #candlist li:hover {
                 cursor: pointer;
-                background-color:#cbcbcb;
+                background-color: #cbcbcb;
             }
     </style>
 </head>
@@ -80,10 +80,15 @@
         <tr>
             <td colspan="2">
                 Auto complete can automatically input the following field:<br />
-                @foreach (var str in ViewBag.strs)
+                @{ string[] autoSor = @ViewBag.strs;}
+                @for (int i = 0; i < autoSor.Count(); i++)
                 {
-                    @str
-                    @: , &nbsp;
+                    @autoSor[i]
+                    if (i == autoSor.Count() - 1)
+                    {
+                        break;
+                    }
+                    @: ,&nbsp;
                 }
             </td>
         </tr>
