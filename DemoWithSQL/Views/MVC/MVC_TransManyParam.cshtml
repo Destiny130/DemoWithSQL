@@ -4,7 +4,7 @@
         function showdata()
         {
             var str = "this is a test string";
-            //var id = 130;
+            var id = 130;
             //var strs = new Array("aa", "bb", "cc");
             //var ids = new Array(66, 55, 44);
             //var fruit = new Object();
@@ -15,7 +15,7 @@
             //fruits.Description = new Array("Pretty", "Sweet");
             //fruits[0].ID = 2; fruits[1].Name = "Apple"; fruits[2].Description = "Pretty";
             //fruits[1].ID = 3; fruits[1].Name = "Orange"; fruits[1].Description = "Sweet";
-            //var obj = { str: str, strs: strs, id: id, ids: ids, fruit: fruit/*, fruits: fruits*/ }
+            var obj = { str: str, id: id/*,strs: strs,  ids: ids, fruit: fruit, fruits: fruits*/ };
             var xmlhttp;
             if (window.XMLHttpRequest) {
                 //code for IE7+, FireFox, Chrome, Opera, Safari
@@ -31,7 +31,7 @@
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     //window.onload = function ()
                     //{
-                        document.getElementById("showarea").innerHTML = xmlhttp.reponseText;
+                    document.getElementById("showarea").innerHTML = xmlhttp.reponseText;
                     //};
                 }
                 else {
@@ -39,10 +39,52 @@
                 }
             }
             xmlhttp.open("POST", "/MVC/GetParams", true);
-            xmlhttp.setRequestHeader("Content-Type", "text/xml");
+            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=utf-8");
             //xmlhttp.requestType = "json";
-            xmlhttp.send(str);
-        }
+            xmlhttp.send(obj);
+        };
+
+        $(function ()
+        {
+            var str = "this is a test string";
+            var id = 130;
+            var strs = new Array("aa", "bb", "cc");
+            var ids = new Array(66, 55, 44);
+            var fruit = new Object();
+            fruit.ID = 1; fruit.Name = "Banana"; fruit.Description = "a type of fruit.";
+            var fruit1 = new Object();
+            fruit1.ID = 2; fruit1.Name = "Apple"; fruit1.Description = "Pretty";
+            var fruit2 = new Object();
+            fruit2.ID = 3; fruit2.Name = "Orange"; fruit2.Description = "Sweet";
+            var fruits = new Array();
+            fruits.push(fruit1);
+            fruits.push(fruit2);
+            //fruits.ID = new Array(2, 3);
+            //fruits.Name = new Array("Apple", "Orange");
+            //fruits.Description = new Array("Pretty", "Sweet");
+            //fruits[0].ID = 2; fruits[1].Name = "Apple"; fruits[2].Description = "Pretty";
+            //fruits[1].ID = 3; fruits[1].Name = "Orange"; fruits[1].Description = "Sweet";
+            var obj = { str: str, id: id, strs: strs, ids: ids, fruit: fruit, fruits: fruits };
+
+            $("#showdata_jquery").click(function ()
+            {
+                $.ajax({
+                    method: "post",
+                    url: "/MVC/GetParams_jQuery",
+                    data: obj,
+                    datatype: "json",
+                    success: function (responseText)
+                    {
+                        $("#showarea_jquery").html(responseText);
+                    },
+                    error(err)
+                    {
+                        var errText = err.status + err.readyState;
+                        $("#showdata_jquery").html(errText);
+                    }
+                });
+            });
+        });
     </script>
 </head>
 <body>
@@ -68,8 +110,10 @@
                 ID = 3, Name = Orange, Description = Sweet.
             </dd>
         </dl>
-        <p>Click this button to show data: <input type="button" id="showdata" value="show data" onclick="showdata()" class="btn btn-default" /></p>
-        <p id="showarea">0</p>
+        <p>Click this button that will use JS to show data: <input type="button" id="showdata" value="show data" onclick="showdata()" class="btn btn-default" /></p>
+        <p>CLick this button that will use jQuery to show data: <input type="button" id="showdata_jquery" value="show data" class="btn btn-default" /></p>
+        <p id="showarea">This block will show JS function data.</p>
+        <p id="showarea_jquery">This block will show jQuery function data.</p>
     </div>
 </body>
 </html>
