@@ -1,0 +1,33 @@
+﻿@model string
+
+<html>
+<head>
+    <script>
+        function showhiddenP(obj)
+        {
+            obj.Children().Last().style.display = "block";
+        };
+        function hidehiddenP(obj)
+        {
+            obj.Children().Last().style.display = "none";
+        }
+    </script>
+    <style>
+        td {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <table>
+        <tr>
+            <td valign="top">Hide a very long text.</td>
+            <td onmouseover="showhiddenP(this)" onmouseout="hidehiddenP(this)">
+                <p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:300px;">@Model</p>
+                <p id="hideP" style="position:absolute;display:none;width:600px;word-break:keep-all;">@Model</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

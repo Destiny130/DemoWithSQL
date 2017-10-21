@@ -240,13 +240,14 @@
     <Content Include="Views\JavaScript\Index.cshtml" />
     <Content Include="Views\JavaScript\JS_DynamicArray.cshtml" />
     <Content Include="Views\CSS\Index.cshtml" />
-    <Content Include="Views\CSS\Fixed.cshtml" />
+    <Content Include="Views\CSS\CSS_Fixed.cshtml" />
     <Content Include="Views\JavaScript\JS_DefineOwnObject.cshtml" />
     <Content Include="Views\JavaScript\JS_Validation.cshtml" />
     <Content Include="Views\JavaScript\JS_Confirm.cshtml" />
     <Content Include="Views\MVC\Index.cshtml" />
     <Content Include="Views\MVC\MVC_AutoComplete.cshtml" />
     <Content Include="Views\MVC\MVC_TransManyParam.cshtml" />
+    <Content Include="Views\CSS\CSS_HideALongText.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
