@@ -18,14 +18,23 @@ namespace DemoWithSQL.Controllers
             return View();
         }
 
-        public ActionResult SQL_SearchDemo_Index(string search)
+        public ActionResult SQL_SearchDemo_Index(string search,string searchGWE)
         {
             search = search == null ? "" : search;
             IQueryable<SearchTest> searchtests = db.SearchTests;
+            ViewBag.search = null;
+            ViewBag.searchGWE = null;
             if (!string.IsNullOrEmpty(search))
             {
-                search = "<test5>" + search + "</test5>";
-                searchtests = searchtests.Where(s => s.RequestMsg.Contains(search));
+               string searchc = "<test5>" + search + "</test5>";
+                searchtests = searchtests.Where(s => s.RequestMsg.Contains(searchc));
+                ViewBag.search = search;
+            }
+            if (!string.IsNullOrEmpty(searchGWE))
+            {
+                string searchGWEc = "<GWE>" + search + "</GWE>";
+                searchtests = searchtests.Where(s => s.RequestMsg.Contains(searchGWEc));
+                ViewBag.searchGWE = searchGWE;
             }
             int count = searchtests.Count();
             searchtests = searchtests.OrderByDescending(s => s.ID).Take(15);

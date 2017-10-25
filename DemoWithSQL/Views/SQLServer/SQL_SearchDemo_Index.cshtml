@@ -12,10 +12,17 @@
 <br />
 @using (Html.BeginForm())
 {
-    <div>
-        <input  id="search" name="search"/> Search <br />
-        <input type="submit" value="search req" />
-    </div>
+    <table class="table">
+        <tr>
+            <td>test5:</td>
+            <td><input id="search" name="search" value=@ViewBag.search /></td>
+            <td>GWE</td>
+            <td><input id="searchGWE" name="searchGWE" value=@ViewBag.searchGWE /></td>
+        </tr>
+        <tr>
+            <td colspan="4" align="left"><input type="submit" value="search req" /></td>
+        </tr>
+    </table>
 }
 <table class="table">
     <tr>
