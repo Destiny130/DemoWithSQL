@@ -1,0 +1,31 @@
+﻿@model DemoWithSQL.Models.SearchTest
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<script>
+    function createonehunderitems()
+    {
+        $.ajax({
+            method: "post",
+            url: "/SQLServer/SQL_SearchDemo_Create_JS",
+            success: function show(msg)
+            {
+                document.getElementById("show").innerHTML = msg;
+            },
+            error: function showerr(err)
+            {
+                document.getElementById("show").innerHTML = err;
+            }
+        })
+    }
+</script>
+
+<h2>Create</h2>
+<button onclick="createonehunderitems()">Create One Hunder Items.</button>
+<p id="show"></p>
+
+<div>
+    @Html.ActionLink("Back to List", "SQL_SearchDemo_Index")
+</div>

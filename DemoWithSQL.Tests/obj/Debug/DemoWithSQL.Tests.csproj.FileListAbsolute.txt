@@ -55,3 +55,7 @@ F:\program\GitHub\DemoWithSQL\DemoWithSQL.Tests\bin\Debug\zh-Hans\Microsoft.Visu
 F:\program\GitHub\DemoWithSQL\DemoWithSQL.Tests\obj\Debug\DemoWithSQL.Tests.csprojResolveAssemblyReference.cache
 F:\program\GitHub\DemoWithSQL\DemoWithSQL.Tests\obj\Debug\DemoWithSQL.Tests.dll
 F:\program\GitHub\DemoWithSQL\DemoWithSQL.Tests\obj\Debug\DemoWithSQL.Tests.pdb
+F:\program\GitHub\DemoWithSQL\DemoWithSQL.Tests\bin\Debug\System.Web.Http.dll
+F:\program\GitHub\DemoWithSQL\DemoWithSQL.Tests\bin\Debug\System.Net.Http.Formatting.dll
+F:\program\GitHub\DemoWithSQL\DemoWithSQL.Tests\bin\Debug\System.Web.Http.xml
+F:\program\GitHub\DemoWithSQL\DemoWithSQL.Tests\bin\Debug\System.Net.Http.Formatting.xml

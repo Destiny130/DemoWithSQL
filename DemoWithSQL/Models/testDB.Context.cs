@@ -26,5 +26,6 @@ namespace DemoWithSQL.Models
         }
     
         public virtual DbSet<SysAuth> SysAuths { get; set; }
+        public virtual DbSet<SearchTest> SearchTests { get; set; }
     }
 }

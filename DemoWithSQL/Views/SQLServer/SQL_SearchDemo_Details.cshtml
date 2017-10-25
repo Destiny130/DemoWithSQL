@@ -1,0 +1,65 @@
+﻿@model DemoWithSQL.Models.SearchTest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SearchTest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestMsg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestMsg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResponseMsg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponseMsg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "SQL_SearchDemo_Index")
+</p>
