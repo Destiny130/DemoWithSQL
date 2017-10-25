@@ -32,7 +32,7 @@ namespace DemoWithSQL.Controllers
             }
             if (!string.IsNullOrEmpty(searchGWE))
             {
-                string searchGWEc = "<GWE>" + search + "</GWE>";
+                string searchGWEc = "<GWE>" + searchGWE + "</GWE>";
                 searchtests = searchtests.Where(s => s.RequestMsg.Contains(searchGWEc));
                 ViewBag.searchGWE = searchGWE;
             }
