@@ -18,7 +18,7 @@ namespace DemoWithSQL.Controllers
             return View();
         }
 
-        public ActionResult SQL_SearchDemo_Index(string search,string searchGWE)
+        public ActionResult SQL_SearchDemo_Index(string search, string searchGWE)
         {
             search = search == null ? "" : search;
             IQueryable<SearchTest> searchtests = db.SearchTests;
@@ -26,7 +26,7 @@ namespace DemoWithSQL.Controllers
             ViewBag.searchGWE = null;
             if (!string.IsNullOrEmpty(search))
             {
-               string searchc = "<test5>" + search + "</test5>";
+                string searchc = "<test5>" + search + "</test5>";
                 searchtests = searchtests.Where(s => s.RequestMsg.Contains(searchc));
                 ViewBag.search = search;
             }
@@ -56,7 +56,7 @@ namespace DemoWithSQL.Controllers
                 searchtest.DefaultKey = i;
                 searchtest.Name = "aName" + (i * 11).ToString();
                 searchtest.Description = "A description " + (i * 32).ToString();
-                List<string> nodes = new List<string> { "tjrsst1", "teshgrct2", "teawfst3", "test4", "test5", "test6gs", "testse7", "te7dtrst8", "tessst9", "tezg8st10","324","fgrrRsdfgRSf","SF","GWE","FWd36Ds" };
+                List<string> nodes = new List<string> { "tjrsst1", "teshgrct2", "teawfst3", "test4", "test5", "test6gs", "testse7", "te7dtrst8", "tessst9", "tezg8st10", "324", "fgrrRsdfgRSf", "SF", "GWE", "FWd36Ds" };
                 string request = "<data dfgs fdgs fdgfg sehb dhgf>";
                 string response = "<data jpforejpgf gmio wpetojnv>";
                 Random rd = new Random();
