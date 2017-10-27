@@ -37,9 +37,10 @@ namespace DemoWithSQL.Controllers
                 ViewBag.searchGWE = searchGWE;
             }
             int count = searchtests.Count();
-            searchtests = searchtests.OrderByDescending(s => s.ID).Take(15);
+            List<SearchTest> queryList = searchtests.OrderByDescending(s => s.ID).Skip(20).Take(15).ToList();
+            //searchtests = searchtests.OrderByDescending(s => s.ID).Skip(200).Take(15);
             ViewBag.count = count;
-            return View(searchtests);
+            return View(queryList);
         }
 
         public ActionResult SQL_SearchDemo_Create()
@@ -50,23 +51,23 @@ namespace DemoWithSQL.Controllers
         [HttpPost]
         public ActionResult SQL_SearchDemo_Create_JS()
         {
-            for (int i = 0; i < 300000; i++)
+            for (int i = 0; i < 68; i++)
             {
                 SearchTest searchtest = new SearchTest();
                 searchtest.DefaultKey = i;
                 searchtest.Name = "aName" + (i * 11).ToString();
                 searchtest.Description = "A description " + (i * 32).ToString();
-                List<string> nodes = new List<string> { "tjrsst1", "teshgrct2", "teawfst3", "test4", "test5", "test6gs", "testse7", "te7dtrst8", "tessst9", "tezg8st10", "324", "fgrrRsdfgRSf", "SF", "GWE", "FWd36Ds" };
-                string request = "<data dfgs fdgs fdgfg sehb dhgf>";
-                string response = "<data jpforejpgf gmio wpetojnv>";
+                List<string> nodes = new List<string> { "Apple", "Orange", "Pear", "Banana", "Grape", "Plum", "Honeymelon", "Papaya", "Coconut", "Mango", "Cherry", "Watermelon", "Dates", "Pitaya", "Strawberry" };
+                string request = "<Fruit>";
+                string response = "<Fruit>";
                 Random rd = new Random();
                 foreach (string str in nodes)
                 {
                     request += "<" + str + ">" + rd.Next(1, 19).ToString() + "</" + str + ">";
                     response += "<" + str + ">" + rd.Next(1, 19).ToString() + "</" + str + ">";
                 }
-                request += "</data>";
-                response += "</data>";
+                request += "</Fruit>";
+                response += "</Fruit>";
                 searchtest.RequestMsg = request;
                 searchtest.ResponseMsg = response;
                 searchtest.CreateDate = DateTime.Now;
