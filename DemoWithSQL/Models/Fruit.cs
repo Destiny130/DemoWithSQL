@@ -12,12 +12,13 @@ namespace DemoWithSQL.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SearchTest
+    public partial class Fruit
     {
-        public int ID { get; set; }
-        public Nullable<int> DefaultKey { get; set; }
+        public int FruitKey { get; set; }
         public string Name { get; set; }
+        public double Price { get; set; }
         public string Description { get; set; }
+        public int Season { get; set; }
         public string RequestMsg { get; set; }
         public string ResponseMsg { get; set; }
         public System.DateTime CreateDate { get; set; }

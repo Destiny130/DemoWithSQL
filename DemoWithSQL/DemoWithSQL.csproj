@@ -180,7 +180,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\SearchTest.cs">
+    <Compile Include="Models\Fruit.cs">
       <DependentUpon>testDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SysAuth.cs">
