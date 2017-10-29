@@ -12,15 +12,13 @@ namespace DemoWithSQL.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Fruit
+    public partial class Fruits
     {
         public int FruitKey { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
         public string Description { get; set; }
-        public int Season { get; set; }
-        public string RequestMsg { get; set; }
-        public string ResponseMsg { get; set; }
+        public string Message { get; set; }
         public System.DateTime CreateDate { get; set; }
     }
 }

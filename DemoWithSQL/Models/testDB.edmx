@@ -13,9 +13,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Price" Type="float" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="200" />
-          <Property Name="Season" Type="int" Nullable="false" />
-          <Property Name="RequestMsg" Type="text" />
-          <Property Name="ResponseMsg" Type="text" />
+          <Property Name="Message" Type="text" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="SysAuth">
@@ -38,7 +36,7 @@
       <Schema Namespace="DemoSQLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DemoSQLEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="SysAuths" EntityType="DemoSQLModel.SysAuth" />
-          <EntitySet Name="Fruits" EntityType="DemoSQLModel.Fruit" />
+          <EntitySet Name="Fruits" EntityType="DemoSQLModel.Fruits" />
         </EntityContainer>
         <EntityType Name="SysAuth">
           <Key>
@@ -50,7 +48,7 @@
           <Property Name="ActionName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
           <Property Name="IsSale" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="Fruit">
+        <EntityType Name="Fruits">
           <Key>
             <PropertyRef Name="FruitKey" />
           </Key>
@@ -58,9 +56,7 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Double" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Season" Type="Int32" Nullable="false" />
-          <Property Name="RequestMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ResponseMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
@@ -81,12 +77,10 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Fruits">
-            <EntityTypeMapping TypeName="DemoSQLModel.Fruit">
+            <EntityTypeMapping TypeName="DemoSQLModel.Fruits">
               <MappingFragment StoreEntitySet="Fruits">
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="ResponseMsg" ColumnName="ResponseMsg" />
-                <ScalarProperty Name="RequestMsg" ColumnName="RequestMsg" />
-                <ScalarProperty Name="Season" ColumnName="Season" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

@@ -173,6 +173,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CSSController.cs" />
+    <Compile Include="Controllers\FruitsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JavaScriptController.cs" />
     <Compile Include="Controllers\MVCController.cs" />
@@ -180,7 +181,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Fruit.cs">
+    <Compile Include="Models\Fruits.cs">
       <DependentUpon>testDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SysAuth.cs">
@@ -278,6 +279,12 @@
     <Content Include="Views\SQLServer\SQL_SearchDemo_Create.cshtml" />
     <Content Include="Views\SQLServer\SQL_SearchDemo_Details.cshtml" />
     <Content Include="Views\SQLServer\SQL_SearchDemo_Index.cshtml" />
+    <Content Include="Views\SQLServer\SQL_Fruits_Index.cshtml" />
+    <Content Include="Views\Fruits\Create.cshtml" />
+    <Content Include="Views\Fruits\Delete.cshtml" />
+    <Content Include="Views\Fruits\Details.cshtml" />
+    <Content Include="Views\Fruits\Edit.cshtml" />
+    <Content Include="Views\Fruits\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

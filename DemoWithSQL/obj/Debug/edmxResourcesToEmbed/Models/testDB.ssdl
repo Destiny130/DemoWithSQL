@@ -8,9 +8,7 @@
     <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Price" Type="float" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
-    <Property Name="Season" Type="int" Nullable="false" />
-    <Property Name="RequestMsg" Type="text" />
-    <Property Name="ResponseMsg" Type="text" />
+    <Property Name="Message" Type="text" />
     <Property Name="CreateDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="SysAuth">
