@@ -52,7 +52,8 @@ namespace DemoWithSQL.Controllers
                 StringBuilder message = new StringBuilder();
                 message.Append("<FruitData>");
                 message.Append("<TotalNumber>" + rd.Next(10, 300) + "</TotalNumber>");
-                message.Append("<CountryCode>" + rd.Next(1, 130) + "</CountryCode>");
+                message.Append("<SendCountryCode>" + rd.Next(1, 130) + "</SendCountryCode>");
+                message.Append("<TakeCountryCode>" + rd.Next(1, 130) + "</TakeCountryCode>");
                 message.Append("<ShipNumber>" + rd.Next(30, 90) + "</ShipNumber>");
                 message.Append("</FruitData>");
                 fruit.Message = message.ToString();
