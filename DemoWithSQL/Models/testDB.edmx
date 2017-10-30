@@ -13,7 +13,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Price" Type="float" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="200" />
-          <Property Name="Message" Type="text" />
+          <Property Name="Message" Type="nvarchar(max)" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="SysAuth">
@@ -56,7 +56,7 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Double" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>

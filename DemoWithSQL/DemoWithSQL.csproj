@@ -285,6 +285,7 @@
     <Content Include="Views\Fruits\Details.cshtml" />
     <Content Include="Views\Fruits\Edit.cshtml" />
     <Content Include="Views\Fruits\Index.cshtml" />
+    <Content Include="Views\SQLServer\SQL_Fruits_Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

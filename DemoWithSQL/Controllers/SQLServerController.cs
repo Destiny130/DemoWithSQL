@@ -33,10 +33,18 @@ namespace DemoWithSQL.Controllers
         }
 
         [HttpPost]
-        public ActionResult SQL_Fruits_Create(Fruits fruit)
+        [ValidateAntiForgeryToken]
+        public ActionResult SQL_Fruits_Create([Bind(Include = "FruitKey,Name,Price,Description,Message")] Fruits fruits)
         {
+            if (ModelState.IsValid)
+            {
+                fruits.CreateDate = DateTime.Now;
+                db.Fruits.Add(fruits);
+                db.SaveChanges();
+                return RedirectToAction("SQL_Fruits_Index");
+            }
 
-            return View();
+            return View(fruits);
         }
 
         public ActionResult SQL_Fruits_CreateMany()
@@ -48,6 +56,7 @@ namespace DemoWithSQL.Controllers
                 List<string> nameList = new List<string> { "Apple", "Orange", "Pear", "Banana", "Grape", "Plum", "Honeymelon", "Papaya" };
                 int nameCount = nameList.Count();
                 fruit.Name = nameList[rd.Next(1, nameCount - 1)];
+                fruit.Price = Math.Round(rd.NextDouble() * 100 + 100, 2);
                 fruit.Description = "This is " + fruit.Name;
                 StringBuilder message = new StringBuilder();
                 message.Append("<FruitData>");
@@ -60,7 +69,7 @@ namespace DemoWithSQL.Controllers
                 fruit.CreateDate = DateTime.Now;
                 db.Fruits.Add(fruit);
                 db.SaveChanges();
-                Thread.Sleep(rd.Next(1560000,4020000));  //26 min to 67 min.
+                Thread.Sleep(rd.Next(1560000, 4020000));  //26 min to 67 min.
             }
             return Content("Create Success!");
         }

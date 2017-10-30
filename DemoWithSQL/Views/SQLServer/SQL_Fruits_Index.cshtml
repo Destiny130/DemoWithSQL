@@ -5,19 +5,50 @@
 }
 
 <script>
-
+    function getDetails(obj)
+    {
+        //var showP = $(obj).siblings("#showDetails");
+        $(obj).children("#showDetails").css("display", "block");
+    };
+    function mouseleft(obj)
+    {
+        //$(obj).siblings("#showDetails").css("display", "none");
+        $(obj).children("#showDetails").css("display", "none");
+    };
 </script>
 
 <h2>SQL_Fruits_Index</h2>
-
+@Html.ActionLink("Create New", "SQL_Fruits_Create", "SQLServer")
 <div id="searchdiv"></div>
 <table class="table">
     <tr>
         <td>FruitKey</td>
         <td>Name</td>
         <td>Price</td>
-        <td>RequestMsg</td>
-        <td>ResponseMsg</td>
+        <td>Description</td>
+        <td>Message</td>
         <td>CreateDate</td>
     </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(model => item.FruitKey)</td>
+            <td>@Html.DisplayFor(model => item.Name)</td>
+            <td>@Html.DisplayFor(model => item.Price)</td>
+            <td>@Html.DisplayFor(model => item.Description)</td>
+            <td onmouseover="getDetails(this)" onmouseout="mouseleft(this)">
+                <p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:390px">
+                    @Html.DisplayFor(model => item.Message)
+                </p>
+                @if (item.Message.Trim() != null && item.Message.Trim() != "")
+                {
+                    <p id="showDetails" style="display:none;position:absolute;background-color:#eeeeee;padding:4px;border:1px solid black;width:430px;word-break:break-all;">
+                        @Html.DisplayFor(model => item.Message)
+                    </p>
+                }
+            </td>
+            <td>@Html.DisplayFor(model => item.CreateDate)</td>
+        </tr>
+    }
 </table>
+
