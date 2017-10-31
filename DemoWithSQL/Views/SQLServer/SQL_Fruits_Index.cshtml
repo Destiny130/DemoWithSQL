@@ -40,7 +40,7 @@
                 <p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:390px">
                     @Html.DisplayFor(model => item.Message)
                 </p>
-                @if (item.Message.Trim() != null && item.Message.Trim() != "")
+                @if (item.Message != null && item.Message != "")
                 {
                     <p id="showDetails" style="display:none;position:absolute;background-color:#eeeeee;padding:4px;border:1px solid black;width:430px;word-break:break-all;">
                         @Html.DisplayFor(model => item.Message)
