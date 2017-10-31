@@ -50,7 +50,8 @@ namespace DemoWithSQL.Controllers
         public ActionResult SQL_Fruits_CreateMany()
         {
             Random rd = new Random();
-            for (int i = 0; i < rd.Next(10, 20); i++)
+            int count = rd.Next(10, 20);
+            for (int i = 0; i < count; i++)
             {
                 Fruits fruit = new Fruits();
                 List<string> nameList = new List<string> { "Apple", "Orange", "Pear", "Banana", "Grape", "Plum", "Honeymelon", "Papaya" };
@@ -69,7 +70,7 @@ namespace DemoWithSQL.Controllers
                 fruit.CreateDate = DateTime.Now;
                 db.Fruits.Add(fruit);
                 db.SaveChanges();
-                Thread.Sleep(rd.Next(1560000, 4020000));  //26 min to 67 min.
+                Thread.Sleep(rd.Next(156000, 402000));  //26 min to 67 min.
             }
             return Content("Create Success!");
         }

@@ -277,6 +277,7 @@
     <Content Include="Views\SQLServer\Index.cshtml" />
     <Content Include="Views\SQLServer\SQL_Fruits_Index.cshtml" />
     <Content Include="Views\SQLServer\SQL_Fruits_Create.cshtml" />
+    <Content Include="Views\JavaScript\JS_DotToImg.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

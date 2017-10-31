@@ -49,5 +49,10 @@ namespace DemoWithSQL.Controllers
         {
             return View();
         }
+
+        public ActionResult JS_DotToImg()
+        {
+            return View();
+        }
     }
 }

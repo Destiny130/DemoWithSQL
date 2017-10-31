@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "JS_DotToImg";
+}
+
+<style>
+    /*#signtable {display: none;-webkit-transform: scale(0.1);-moz-transform: scale(0.1);-o-transform: scale(0.1);}  //for show "■"
+        #signtable tr {}
+        #signtable td {margin: 0;padding: 0;}*/
+    /*#signdiv {border-collapse:collapse;text-space-collapse:collapse;}*/
+    .black {
+        background-color: black;
+    }
+</style>
+
+<script>
+    function showsign()
+    {
+        var inner = '';
+        @*for (var row = 0; row < 300; row++) {     //table discard.
+            inner += "<tr>";
+            for (var col = 0; col < 300; col++) {
+                inner += "<td>";
+                if (row % 3 == 0 && col % 4 == 0) {
+                    inner += "■";
+                }
+                else {
+                    inner += "■";
+                }
+                inner += "</td>";
+            }
+            inner += "</tr>";
+        }
+        document.getElementById("signtable").innerHTML = inner;
+        document.getElementById("signtable").style.display = "table";*@
+        @*for (var row = 0; row < 100; row++) {     //table discard.
+            for (var col = 0; col < 100; col++) {
+                if (row % 3 == 0 && col % 4 == 0) {
+                    inner += "■";
+                }
+                else {
+                    inner += "■";
+                }
+            }
+            inner += "<br />";
+        }
+        document.getElementById("signdiv").innerHTML = inner;*@
+        for (var row = 1; row < 200; row++) {     //table discard.
+            inner += '<tr>';
+            for (var col = 1; col < 200; col++) {
+                if ((row % 50 == 0 && 50 <= col && col <= 150) || (col % 50 == 0 && 50 <= row && row <= 150)) {
+                  inner += '<td style="background-color:black;"></td>'  //inner += '<td class="black"></td>';
+                }
+                else {
+                    inner += '<td></td>';
+                }
+            }
+            inner += '</tr>';
+        }
+        document.getElementById("signtable").innerHTML = inner;
+        document.getElementById("signtable").style.display = "table";
+    };
+</script>
+<br />
+<h4>This page shows how use dot array show a Img.</h4>
+<br />
+<button onclick="showsign()">Show Sign</button><br /><br />
+<table id="signtable" style="border:1px dashed blue;"></table>
+@*<div id="signdiv"></div>*@

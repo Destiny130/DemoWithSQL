@@ -4,22 +4,33 @@
     ViewBag.Title = "SQL_Fruits_Index";
 }
 
+
+
 <script>
     function getDetails(obj)
     {
-        //var showP = $(obj).siblings("#showDetails");
         $(obj).children("#showDetails").css("display", "block");
     };
     function mouseleft(obj)
     {
-        //$(obj).siblings("#showDetails").css("display", "none");
         $(obj).children("#showDetails").css("display", "none");
     };
+
+    
+
 </script>
 
-<h2>SQL_Fruits_Index</h2>
-@Html.ActionLink("Create New", "SQL_Fruits_Create", "SQLServer")
-<div id="searchdiv"></div>
+<table style="width:100%;">
+    <tr>
+        <td><h4>This page shows how to use ajax do search and paging.</h4></td>
+        <td align="right">@Html.ActionLink("Create New", "SQL_Fruits_Create", "SQLServer")</td>
+    </tr>
+</table>
+
+<div id="searchdiv">
+    23
+</div>
+<br />
 <table class="table">
     <tr>
         <td>FruitKey</td>
@@ -51,4 +62,7 @@
         </tr>
     }
 </table>
+<div>Page 1 of 120</div>
+<div></div>
+
 
