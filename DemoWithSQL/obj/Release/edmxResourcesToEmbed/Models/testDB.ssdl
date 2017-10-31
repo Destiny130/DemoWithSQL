@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoSQLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Fruits">
+    <Key>
+      <PropertyRef Name="FruitKey" />
+    </Key>
+    <Property Name="FruitKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SysAuth">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeKey" Type="int" Nullable="false" />
+    <Property Name="ControllerName" Type="nvarchar" MaxLength="400" />
+    <Property Name="ActionName" Type="nvarchar" MaxLength="400" />
+    <Property Name="IsSale" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DemoSQLModelStoreContainer">
+    <EntitySet Name="Fruits" EntityType="Self.Fruits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SysAuth" EntityType="Self.SysAuth" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
