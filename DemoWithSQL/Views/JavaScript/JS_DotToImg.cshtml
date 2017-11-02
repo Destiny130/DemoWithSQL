@@ -17,7 +17,7 @@
     function showsign()
     {
         var inner = '';
-        @*for (var row = 0; row < 300; row++) {     //table discard.
+        @*for (var row = 0; row < 300; row++) {     
             inner += "<tr>";
             for (var col = 0; col < 300; col++) {
                 inner += "<td>";
@@ -33,7 +33,7 @@
         }
         document.getElementById("signtable").innerHTML = inner;
         document.getElementById("signtable").style.display = "table";*@
-        @*for (var row = 0; row < 100; row++) {     //table discard.
+        @*for (var row = 0; row < 100; row++) {     
             for (var col = 0; col < 100; col++) {
                 if (row % 3 == 0 && col % 4 == 0) {
                     inner += "■";
@@ -45,7 +45,7 @@
             inner += "<br />";
         }
         document.getElementById("signdiv").innerHTML = inner;*@
-        for (var row = 1; row < 200; row++) {     //table discard.
+        for (var row = 1; row < 200; row++) {    
             inner += '<tr>';
             for (var col = 1; col < 200; col++) {
                 if ((row % 50 == 0 && 50 <= col && col <= 150) || (col % 50 == 0 && 50 <= row && row <= 150)) {
