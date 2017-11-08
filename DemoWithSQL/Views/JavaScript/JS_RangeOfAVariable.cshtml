@@ -1,13 +1,12 @@
 <html>
 <head>
     <script>
-        function clickFunction() {
+        window.onload = function () {
             var name = "Volvo";
-            carname = name;           //Golbal variable
-            onestepname = "TOYOTA";   //Golbal variable
-            //Can't use 'temp = document.getElementById("_id").value;', its null.
+            carname = name;    //Golbal variable
+            onestepname = document.getElementById("showcarname").innerText;    //Golbal variable
+            //onestepname = "TOYOTA";
         };
-        clickFunction();
         function showGolbalVariable() {
             document.getElementById("showcarname").innerHTML = carname;
         }
