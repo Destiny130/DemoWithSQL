@@ -1,33 +1,41 @@
-﻿<html>
+<html>
 <head>
     <script>
-        function clickFunction()
-        {
+        function clickFunction() {
             var name = "Volvo";
-            carname = name;     //Golbal variable
+            carname = name;           //Golbal variable
+            onestepname = "TOYOTA";   //Golbal variable
+            //Can't use 'temp = document.getElementById("_id").value;', its null.
         };
         clickFunction();
-        //document.getElementById("testp").innerHTML = carname;
-        function showGolbalVariable()
-        {
+        function showGolbalVariable() {
             document.getElementById("showcarname").innerHTML = carname;
         }
-        function showLocalVariable()
-        {
+        function showLocalVariable() {
             document.getElementById("showname").innerHTML = name;
         }
-        
-
+        function showOneStepDefined() {
+            document.getElementById("showonestep").innerHTML = onestepname;
+        }
     </script>
 </head>
 <body>
     <br />
     <h4>If a variable defined in a function but not use 'var', this is a golbal variable.</h4>
     <br />
-    <button class="btn btn-default" onclick="showGolbalVariable()">show golbal variable</button>
-    <span id="showcarname" >123</span>
-    
-    <button class="btn btn-default" onclick="showLocalVariable()">show golbal variable</button>
-    <span id="showname" >223</span>
+    <div>
+        <button class="btn btn-default" onclick="showGolbalVariable()">show golbal variable</button>
+        <span id="showcarname">123</span>
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-default" onclick="showLocalVariable()">show golbal variable</button>
+        <span id="showname">223</span>
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-default" onclick="showOneStepDefined()">show one step defined variable</button>
+        <span id="showonestep">433</span>
+    </div>
 </body>
 </html>
