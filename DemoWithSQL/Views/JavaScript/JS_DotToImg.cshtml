@@ -17,7 +17,7 @@
     function showsign()
     {
         var inner = '';
-        @*for (var row = 0; row < 300; row++) {     
+        @*for (var row = 0; row < 300; row++) {
             inner += "<tr>";
             for (var col = 0; col < 300; col++) {
                 inner += "<td>";
@@ -33,7 +33,7 @@
         }
         document.getElementById("signtable").innerHTML = inner;
         document.getElementById("signtable").style.display = "table";*@
-        @*for (var row = 0; row < 100; row++) {     
+        @*for (var row = 0; row < 100; row++) {
             for (var col = 0; col < 100; col++) {
                 if (row % 3 == 0 && col % 4 == 0) {
                     inner += "■";
@@ -45,7 +45,7 @@
             inner += "<br />";
         }
         document.getElementById("signdiv").innerHTML = inner;*@
-        for (var row = 1; row < 200; row++) {    
+        for (var row = 1; row < 200; row++) {
             inner += '<tr>';
             for (var col = 1; col < 200; col++) {
                 if ((row % 50 == 0 && 50 <= col && col <= 150) || (col % 50 == 0 && 50 <= row && row <= 150)) {
@@ -66,4 +66,33 @@
 <br />
 <button onclick="showsign()">Show Sign</button><br /><br />
 <table id="signtable" style="border:1px dashed blue;"></table>
-@*<div id="signdiv"></div>*@
+<br />
+
+<div>
+    <script>
+        $(function ()
+        {
+            var source = "30,43^23,100^50,100^130,70^0,65535";
+            var pathList = source.split('^0,65535^');
+            var testSvg = document.getElementById("testSvg");
+            var Ymin = 99999; var Ymax = 0; var Xmin = 99999; var Xmax = 0;
+            for (var i = 0; i < pathList.length; i++) {
+                var tempArray = pathList[i].match(/\d+/g);
+                for (var j = 0; j < tempArray.length; j++) {
+                    var k = parseInt(tempArray[j]);
+                    if (k < 65535 && k > 0) {
+                        if (j % 2 == 0) { Xmin = Xmin < k ? Xmin : k; Xmax = Xmax > k ? Xmax : k; }
+                        else { Ymin = Ymin < k ? Ymin : k; Ymax = Ymax > k ? Ymax : k; }
+                    }
+                }
+                var svgInner = '<path fill="none" stroke="black" d="M' + pathList[i].replace(/\^/g, 'L').replace('L0,65535', '') + '"></path>';
+                testSvg.innerHTML += svgInner;
+            };
+            testSvg.setAttribute('width', Xmax + 10);
+            testSvg.setAttribute('height', Ymax + 10);
+        });
+    </script>
+    <div style="border:1px dashed red;">
+        <svg id="testSvg"></svg>
+    </div>
+</div>
