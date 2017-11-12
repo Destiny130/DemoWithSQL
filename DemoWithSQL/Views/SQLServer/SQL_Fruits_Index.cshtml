@@ -4,7 +4,19 @@
     ViewBag.Title = "SQL_Fruits_Index";
 }
 
+<style>
+    #searchTable {
+        width: 100%;
+    }
 
+        #searchTable td {
+            padding: 4px;
+        }
+
+        #searchTable input {
+            width: 100px;
+        }
+</style>
 
 <script>
     function getDetails(obj)
@@ -16,22 +28,69 @@
         $(obj).children("#showDetails").css("display", "none");
     };
 
-    
+    Search = function ()
+    {
+        var searchList = new Object();
+        searchList.FruitKey = document.getElementById("searchFruitKey").value;
+        searchList.Name = document.getElementById("searchName").value;
+        searchList.Price = document.getElementById("searchPrice").value;
+        searchList.TotalNumber = document.getElementById("searchTotalNumber").value;
+        searchList.PageSize = document.getElementById("PageSize").value;
+        $.ajax({
+            type: "post",
+            data: { SearchList: searchList },
+            url: "/SQLServer/SQL_Fruits_Search",
+            datatype: "json",
+            success: function (data)
+            {
+                var FruitTable = document.getElementById("FruitTable");
+                var innerhtml = '<tr><td>FruitKey</td><td>Name</td><td>Price</td><td>Description</td><td>Message</td><td>CreateDate</td></tr>';
+                for (var i = 0; i < data.length; i++) {
+                    innerhtml += '<tr><td>' + data[i].FruitKey + '</td><td>' + data[i].Name + '</td><td>' + data[i].Price + '</td><td>' + data[i].Description + '</td><td>' + data[i].Message + '</td><td>' + data[i].CreateDate + '</td></tr>';
+                }
+                FruitTable.innerHTML = innerhtml;
+            },
+            error: function (err)
+            {
+
+            }
+        });
+    };
+
 
 </script>
 
-<table style="width:100%;">
+<table style="width:100%;margin-top:10px;">
     <tr>
         <td><h4>This page shows how to use ajax do search and paging.</h4></td>
         <td align="right">@Html.ActionLink("Create New", "SQL_Fruits_Create", "SQLServer")</td>
     </tr>
 </table>
 
-<div id="searchdiv">
-    23
-</div>
+<table id="searchTable">
+    <tr>
+        <td width="68">Fruit Key:</td>
+        <td width="110"><input id="searchFruitKey" /></td>
+        <td width="50">Name:</td>
+        <td width="110"><input id="searchName" /></td>
+        <td width="44">Price: </td>
+        <td width="110"><input id="searchPrice" /></td>
+        <td width="92">TotalNumber: </td>
+        <td width="110"><input id="searchTotalNumber" /></td>
+        @*<td>CreateDate: </td>
+            <td><input id="searchCreateDate" /></td>*@
+        <td width="50"><button id="search" onclick="Search()">Search</button></td>
+        <td align="right">
+            <select id="PageSize">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+            </select>
+        </td>
+    </tr>
+</table>
 <br />
-<table class="table">
+<table id="FruitTable" class="table">
     <tr>
         <td>FruitKey</td>
         <td>Name</td>
@@ -63,6 +122,8 @@
     }
 </table>
 
-<div></div>
+<div>
+    <p id="PageInfo"></p>
+</div>
 
 

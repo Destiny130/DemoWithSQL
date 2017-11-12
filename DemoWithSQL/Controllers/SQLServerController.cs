@@ -27,6 +27,12 @@ namespace DemoWithSQL.Controllers
             return View(fruits);
         }
 
+        public ActionResult SQL_Fruits_Search(SearchList searchList)
+        {
+            IQueryable<Fruits> fruits = db.Fruits.Where(f => f.Name == searchList.Name).OrderByDescending(f => f.CreateDate);
+            return Json(fruits);
+        }
+
         public ActionResult SQL_Fruits_Create()
         {
             return View();
@@ -111,5 +117,17 @@ namespace DemoWithSQL.Controllers
             TempData["DeleteStatus"] = "Delete Success!";
             return View("SQL_Fruits_Index");
         }
+    }
+
+    public class SearchList
+    {
+        public string FruitKey { get; set; }
+        public string Name { get; set; }
+        public string Price { get; set; }
+        public string TotalNumber { get; set; }
+        //public string CreateDate { get; set; }
+        public string PageSize { get; set; }
+        public string TotalPage { get; set; }
+        public string CurrentPage { get; set; }
     }
 }
