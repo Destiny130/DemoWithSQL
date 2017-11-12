@@ -278,6 +278,8 @@
     <Content Include="Views\SQLServer\SQL_Fruits_Index.cshtml" />
     <Content Include="Views\SQLServer\SQL_Fruits_Create.cshtml" />
     <Content Include="Views\JavaScript\JS_DotToImg.cshtml" />
+    <Content Include="Views\JavaScript\JS_Closure.cshtml" />
+    <Content Include="Views\JavaScript\JS_CountTime.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

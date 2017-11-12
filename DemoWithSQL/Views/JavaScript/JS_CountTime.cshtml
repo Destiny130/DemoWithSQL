@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "JS_CountTime";
+}
+
+<br />
+<h4>In this page, you can check running time in 'Console'.</h4>
+<br />
+<div>
+    <script>
+        function startAdd()
+        {
+            console.time("generate_arr");
+            var arr = [];
+            for (var j = 0; j < 9999999; j++)
+            { arr[j] = j; }
+            console.timeEnd("generate_arr");
+
+            var for_golbal_start = window.performance.now();
+            var s = 0;
+            for (var i = 0; i < arr.length; i++) { s += i; }
+            console.log(s);
+            var for_golbal_end = window.performance.now();
+            document.getElementById("for_golbal").innerHTML += for_golbal_end - for_golbal_start + " ms<br />";
+
+            var each_golbal_start = window.performance.now();
+            var ss = 0;
+            arr.forEach(function (v) { ss += v; });
+            console.log(ss);
+            var each_golbal_end = window.performance.now();
+            document.getElementById("each_golbal").innerHTML += each_golbal_end - each_golbal_start + " ms<br />";
+
+            var for_closure_start = window.performance.now();
+            (function x()
+            {
+                var s2 = 0;
+                for (var j = 0; j < 9999999; j++)
+                { s2 += j; }
+                console.log(s2);
+            })()
+            var for_closure_end = window.performance.now();
+            document.getElementById("for_closure").innerHTML += for_closure_end - for_closure_start + " ms<br />";
+
+            var each_closure_start = window.performance.now();
+            (function y()
+            {
+                var ss2 = 0;
+                arr.forEach(function (z) { ss2 += z; });
+                console.log(ss2);
+            })()
+            var each_closure_end = window.performance.now();
+            document.getElementById("each_closure").innerHTML += each_closure_end - each_closure_start + " ms<br />";
+
+            console.log("-------------------------------------This round ends-------------------------------------");
+        };
+    </script>
+    <div>
+        <button onclick="startAdd()">start</button>
+        <span>Generate an array, then add its elements.</span>
+    </div>
+    <p id="for_golbal">for_golbal: </p>
+    <br />
+    <p id="each_golbal">each_golbal: </p>
+    <br />
+    <p id="for_closure">for_closure: </p>
+    <br />
+    <p id="each_closure">each_closure: </p>
+</div>

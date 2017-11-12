@@ -54,5 +54,15 @@ namespace DemoWithSQL.Controllers
         {
             return View();
         }
+
+        public ActionResult JS_CountTime()
+        {
+            return View();
+        }
+
+        public ActionResult JS_Closure()
+        {
+            return View();
+        }
     }
 }
