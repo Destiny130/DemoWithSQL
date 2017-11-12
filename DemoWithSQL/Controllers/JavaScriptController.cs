@@ -64,5 +64,10 @@ namespace DemoWithSQL.Controllers
         {
             return View();
         }
+
+        public ActionResult JS_Callback()
+        {
+            return View();
+        }
     }
 }

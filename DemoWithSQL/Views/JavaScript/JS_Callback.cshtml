@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "JS_Callback";
+}
+
+<h4>Call back in JavaScript.</h4>
+
+<div>
+    <script>
+        function mySandwich(param1, param2, callback)
+        {
+            alert('Started eating my sandwich.\n\nIt has: ' + param1 + ', ' + param2);
+            if (callback && typeof (callback) === "function") {
+                callback();
+            }  
+        }
+
+        mySandwich('ham', 'cheese', function ()
+        {
+            alert('Finished eating my sandwich.');
+        });
+    </script>
+</div>
