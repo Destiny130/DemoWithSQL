@@ -29,8 +29,21 @@ namespace DemoWithSQL.Controllers
 
         public ActionResult SQL_Fruits_Search(SearchList searchList)
         {
-            IQueryable<Fruits> fruits = db.Fruits.Where(f => f.Name == searchList.Name).OrderByDescending(f => f.CreateDate);
+            IQueryable<Fruits> fruits = db.Fruits;
+            if (!string.IsNullOrEmpty(searchList.FruitKey))
+            {
+                fruits = fruits.Where(f => f.FruitKey.ToString() == searchList.FruitKey).OrderByDescending(f => f.CreateDate);
+            }
+            //fruits = SelectMethod(fruits, Name, searchList.Name);
             return Json(fruits);
+        }
+
+        public interface IMyInterface { string t { get; set; } }
+
+        public static IQueryable<T> SelectMethod<T>(IQueryable<T> list, string str) where T : IMyInterface
+        {
+            var temp = list.Where(l => l.t == str);
+            return temp;
         }
 
         public ActionResult SQL_Fruits_Create()

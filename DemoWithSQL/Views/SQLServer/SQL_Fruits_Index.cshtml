@@ -40,13 +40,14 @@
             type: "post",
             data: { SearchList: searchList },
             url: "/SQLServer/SQL_Fruits_Search",
-            datatype: "json",
+            datatype: "xml",
             success: function (data)
             {
+                var oSerializer = new XMLSerializer();
                 var FruitTable = document.getElementById("FruitTable");
                 var innerhtml = '<tr><td>FruitKey</td><td>Name</td><td>Price</td><td>Description</td><td>Message</td><td>CreateDate</td></tr>';
                 for (var i = 0; i < data.length; i++) {
-                    innerhtml += '<tr><td>' + data[i].FruitKey + '</td><td>' + data[i].Name + '</td><td>' + data[i].Price + '</td><td>' + data[i].Description + '</td><td onmouseover="getDetails(this)" onmouseout="mouseleft(this)"><p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:390px"><xmp>' + data[i].Message + '</xmp></p><p id="showDetails" style="display:none;position:absolute;background-color:#eeeeee;padding:4px;border:1px solid black;width:430px;word-break:break-all;"><xmp>' + data[i].Message + '</xmp></p></td><td>' + data[i].CreateDate + '</td></tr>';
+                    innerhtml += '<tr><td>' + data[i].FruitKey + '</td><td>' + data[i].Name + '</td><td>' + data[i].Price + '</td><td>' + data[i].Description + '</td><td onmouseover="getDetails(this)" onmouseout="mouseleft(this)"><p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:390px">' + data[i].Message + '</p><p id="showDetails" style="display:none;position:absolute;background-color:#eeeeee;padding:4px;border:1px solid black;width:430px;word-break:break-all;">' + data[i].Message + '</p></td><td>' + data[i].CreateDate + '</td></tr>';
                 }
                 FruitTable.innerHTML = innerhtml;
             },
