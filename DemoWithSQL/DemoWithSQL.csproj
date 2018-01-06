@@ -267,7 +267,7 @@
     <Content Include="Views\JavaScript\JS_DynamicArray.cshtml" />
     <Content Include="Views\CSS\Index.cshtml" />
     <Content Include="Views\CSS\CSS_Fixed.cshtml" />
-    <Content Include="Views\JavaScript\JS_DefineOwnObject.cshtml" />
+    <Content Include="Views\JavaScript\JS_UserDefinedObject.cshtml" />
     <Content Include="Views\JavaScript\JS_Validation.cshtml" />
     <Content Include="Views\JavaScript\JS_Confirm.cshtml" />
     <Content Include="Views\MVC\Index.cshtml" />

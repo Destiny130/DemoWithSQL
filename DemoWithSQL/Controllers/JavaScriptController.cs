@@ -23,7 +23,7 @@ namespace DemoWithSQL.Controllers
             return View();
         }
 
-        public ActionResult JS_DefineOwnObject()
+        public ActionResult JS_UserDefinedObject()
         {
             return View();
         }
