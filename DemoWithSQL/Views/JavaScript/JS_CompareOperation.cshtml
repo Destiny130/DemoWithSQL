@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "JS_CompareOperation";
+}
+
+<h2>JS_CompareOperation</h2>
+
+<script>
+    var testStr1 = "hahaha";
+    var testStr2 = "lalala";
+    if (testStr1 = testStr2) {
+        console.log("String in conditional statement successed.");
+        console.log("testStr1: " + testStr1);
+    }
+
+    if (testStr2 = "look") {
+        console.log("Direct assignment in string type successed");
+        console.log("testStr2: " + testStr2);
+    }
+
+    if (testStr2 = 10) {
+        console.log("Convert string to int successed.");
+        console.log("testStr2: " + testStr2);
+    }
+
+    var testInt1 = 1;
+    var testInt2 = 2;
+    if (testInt1 = testInt2) {
+        console.log("Int in conditional statement successed.");
+    }
+
+    if (testInt2 = 3) {
+        console.log("Direct assignment in int type successed.");
+    }
+
+    var testBoolean1 = true;
+    var testBoolean2 = false;
+    if (testBoolean1 = testBoolean2) {
+        console.log("Boolean in conditional statement successed.");
+    }
+
+    if (testBoolean2 = true) {
+        console.log("Direct assignment in boolean type successed. (assign it to 'TRUE')");
+    }
+
+    if (testBoolean1 = false) {
+        console.log("Direct assignment in int type successed.");
+    }
+    else {
+        console.log("Direct assignment in boolean type failed. (assign it to 'FALSE')");
+    }
+</script>

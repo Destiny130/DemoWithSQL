@@ -281,6 +281,7 @@
     <Content Include="Views\JavaScript\JS_Closure.cshtml" />
     <Content Include="Views\JavaScript\JS_CountTime.cshtml" />
     <Content Include="Views\JavaScript\JS_Callback.cshtml" />
+    <Content Include="Views\JavaScript\JS_CompareOperation.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

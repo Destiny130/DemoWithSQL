@@ -69,5 +69,10 @@ namespace DemoWithSQL.Controllers
         {
             return View();
         }
+
+        public ActionResult JS_CompareOperation()
+        {
+            return View();
+        }
     }
 }
